@@ -1,13 +1,13 @@
 //M-1
 const asyncHandler = (requestHandler) => {
-    return (req,res,next) => {
-        Promise.resolve(requestHandler(req,res,next)).
-        catch((err) => next(err));
+    return (req, res, next) => {
+      Promise.resolve(requestHandler(req, res, next)).catch
+      ((err) => next(err))
     }
-}
-
-
-export {asyncHandler}
+  };
+  
+  export { asyncHandler };
+  
 
 //M-2
 // const asyncHandler = (fn) => async (req,res,next) => {
@@ -15,7 +15,7 @@ export {asyncHandler}
 //         await fn(req,res,next)
 //     }catch (error){
 //         res.status(err.code || 500).json({
-//             success: false,
+//             success: false,  
 //             message: err.message
 //         });
 //     }

@@ -6,7 +6,7 @@ import { DB_NAME } from "./constants.js";
 import express from "express";
 import connectDB from "./db/index.js";
 
-const app = express();
+import {app} from "./app.js"
 
 // function connectDB(){}
 // connectDB
@@ -39,9 +39,9 @@ dotenv.config({
     path: './env'
 })
 connectDB()
-.then(() =>{
-    app.listen(process.env.PORT || 6000, () => {
-        console.log(`Server is running...`)
+.then(() => {
+    app.listen(process.env.PORT || 5010, () => {
+        console.log(`Server is running... ${process.env.PORT}`)
     })
 })
 .catch((err) => {
