@@ -60,8 +60,8 @@ userSchema.pre(
     }) //jo bhi code execute karwana hai save hone se pehle use pre hooks
 
     //This is used to generate our custom methods
-    userSchema.methods.isPasswordCorrect = async function (password){
-        return await bcrypt.compare(password, this.password)
+    userSchema.methods.isPasswordCorrect = async function(password) {
+        return await bcrypt.compare(password, this.password);
     }
 
     userSchema.methods.generateAccessToken = function(){
